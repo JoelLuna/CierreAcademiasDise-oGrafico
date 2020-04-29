@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Agregar proyecto</title>
+    </h:head>
+    <h:body>
+        
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Agregar proyecto"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="IDProyecto:" for="IDProyecto" />
+                    <h:inputText id="IDProyecto" value="#{proyectoControlador.p.IDProyecto}" title="IDProyecto" required="true" requiredMessage="The IDProyecto field is required."/>
+                    <h:outputLabel value="NombredelProyecto:" for="nombredelProyecto" />
+                    <h:inputText id="nombredelProyecto" value="#{proyectoControlador.p.nombredelProyecto}" title="NombredelProyecto" />
+                    <h:outputLabel value="Descripcion:" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{proyectoControlador.p.descripcion}" title="Descripcion" />
+                    <h:outputLabel value="IDCiclo:" for="IDCiclo" />
+                    <h:selectOneMenu id="IDCiclo" value="#{proyectoControlador.p.IDCiclo}" title="IDCiclo" >
+                         
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{fixme}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="IDEncargado:" for="IDEncargado" />
+                    <h:selectOneMenu id="IDEncargado" value="#{proyectoControlador.p.IDEncargado}" title="IDEncargado" >
+                        
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems itemValue="#{fixme}" />
+                    </h:selectOneMenu>
+                    <h:outputLabel value="IDEquipo:" for="IDEquipo" />
+                    <h:selectOneMenu id="IDEquipo" value="#{proyectoControlador.p.IDEquipo}" title="IDEquipo" >
+                        
+                        <!-- TODO: update below reference to list of available />items-->
+                        <f:selectItems value="#{fixme}" />
+                    </h:selectOneMenu>
+                    <h:commandButton value="Guardar" action="#{proyectoControlador.add()}"/>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+        
+    </h:body>
+</html>
+

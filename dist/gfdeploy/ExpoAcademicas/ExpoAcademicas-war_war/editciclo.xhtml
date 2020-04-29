@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Editar ciclo</title>
+    </h:head>
+    <h:body>
+
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Editar ciclo"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="IDCiclo:" for="IDCiclo" />
+                    <h:inputText id="IDCiclo" value="#{cicloControlador.e.IDCiclo}" title="IDCiclo" required="true" requiredMessage="The IDCiclo field is required."/>
+                    <h:outputLabel value="Anio:" for="anio" />
+                    <h:inputText id="anio" value="#{cicloControlador.e.anio}" title="Anio" />
+                    <h:outputLabel value="Ciclo:" for="ciclo" />
+                    <h:inputText id="ciclo" value="#{cicloControlador.e.ciclo}" title="Ciclo" />
+                    <h:commandButton value="Guardar" action="#{cicloControlador.edit()}"/>
+                    
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+
+    </h:body>
+</html>
+
