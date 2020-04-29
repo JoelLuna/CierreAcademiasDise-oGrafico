@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Pruebas</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <h:link value="Crear nuevo ciclo" outcome="addciclo"></h:link>
+            <br></br>
+            <h:dataTable var="ciclo" value="#{cicloControlador.findAll()}" border="1" cellpadding="2" cellspacing="2">
+                <h:column>
+                    <f:facet name="header">IDCiclo</f:facet>
+                    <h:outputText value="#{ciclo.IDCiclo}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ciclo</f:facet>
+                    <h:outputText value="#{ciclo.ciclo}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Anio</f:facet>
+                    <h:outputText value="#{ciclo.anio}"></h:outputText>
+                </h:column>
+                <h:column>
+                
+                    <f:facet name="header">Opciones</f:facet>
+                    <h:commandLink value="Editar " action="#{cicloControlador.edit(ciclo)}" ></h:commandLink>
+                    <h:commandLink value=" Eliminar" action="#{cicloControlador.delete(ciclo)}" onclick="return confirm('¿Desea eliminar ciclo del registro?')"></h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        
+        <h:form>
+            <h:link value="Crear nuevo equipo" outcome="addequi"></h:link>
+            <br></br>
+            <h:dataTable var="equi" value="#{equipoControlador.findAll()}" border="1" cellpadding="2" cellspacing="2">
+                <h:column>
+                    <f:facet name="header">IDEquipo</f:facet>
+                    <h:outputText value="#{equi.IDEquipo}"></h:outputText>
+                </h:column>
+               
+                <h:column>
+                
+                    <f:facet name="header">Opciones</f:facet>
+                    <h:commandLink value="Editar " action="#{equipoControlador.edit(equi)}" ></h:commandLink>
+                    <h:commandLink value=" Eliminar" action="#{equipoControlador.delete(equi)}" onclick="return confirm('¿Desea eliminar equipo del registro?')"></h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+        
+        <h:form>
+            <h:link value="Agregar nuevo encargado" outcome="addenc"></h:link>
+            <br></br>
+            <h:dataTable var="enc" value="#{encargadoControlador.findAll()}" border="1" cellpadding="2" cellspacing="2">
+                <h:column>
+                    <f:facet name="header">IDEncargado</f:facet>
+                    <h:outputText value="#{enc.IDEncargado}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    <h:outputText value="#{enc.nombre}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Materia</f:facet>
+                    <h:outputText value="#{enc.materia}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nivel</f:facet>
+                    <h:outputText value="#{enc.nivel}"></h:outputText>
+                </h:column>
+                <h:column>
+                
+                    <f:facet name="header">Opciones</f:facet>
+                    <h:commandLink value="Editar " action="#{encargadoControlador.edit(p)}" ></h:commandLink>
+                    <h:commandLink value=" Eliminar" action="#{encargadoControlador.delete(p)}" onclick="return confirm('¿Desea eliminar encargado del registro?')"></h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        
+        
+        
+        <h:form>
+            <h:link value="Agregar nuevo alumno" outcome="addalu"></h:link>
+            <br></br>
+            <h:dataTable var="alu" value="#{alumnoControlador.findAll()}" border="1" cellpadding="2" cellspacing="2">
+                <h:column>
+                    <f:facet name="header">IDAlumno</f:facet>
+                    <h:outputText value="#{alu.IDAlumno}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    <h:outputText value="#{alu.nombre}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">IDEquipo</f:facet>
+                    <h:outputText value="#{alu.IDEquipo}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Correo</f:facet>
+                    <h:outputText value="#{alu.correo}"></h:outputText>
+                </h:column>
+                <h:column>
+                
+                    <f:facet name="header">Opciones</f:facet>
+                    <h:commandLink value="Editar " action="#{alumnoControlador.edit(p)}" ></h:commandLink>
+                    <h:commandLink value=" Eliminar" action="#{alumnoControlador.delete(p)}" onclick="return confirm('¿Desea eliminar alumno del registro?')"></h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        
+        <h:form>
+            <h:link value="Agregar nuevo proyecto" outcome="add"></h:link>
+            <br></br>
+            <h:dataTable var="p" value="#{proyectoControlador.findAll()}" border="1" cellpadding="2" cellspacing="2">
+                <h:column>
+                    <f:facet name="header">id</f:facet>
+                    <h:outputText value="#{p.IDProyecto}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    <h:outputText value="#{p.nombredelProyecto}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ciclo</f:facet>
+                    <h:outputText value="#{p.IDCiclo.ciclo}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Encargado</f:facet>
+                    <h:outputText value="#{p.IDEncargado.nombre}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Equipo</f:facet>
+                    <h:outputText value="#{p.IDEquipo.IDEquipo}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Descripcion</f:facet>
+                    <h:outputText value="#{p.descripcion}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Opciones</f:facet>
+                    <h:commandLink value="Editar " action="#{proyectoControlador.edit(p)}" ></h:commandLink>
+                    <h:commandLink value=" Eliminar" action="#{proyectoControlador.delete(p)}" onclick="return confirm('¿Desea eliminar proyecto del registro?')"></h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
